@@ -20,6 +20,8 @@ The Quotebot server implements 3 essential listeners or REST endpoints:
 
 The following diagram shows the flow of events from the time a user asks for a quote to when the quote is displayed on the user's slack channel.
 
+![alt text](http://pluralconcepts.com/images/quotebot-design.jpg "Quotebot Design")
+
    1. User types: @quotebot q int
    2. The event listener receives "q int", parses and looks up the symbol from its internal trie structures.
    3. It finds that there are several symbols starting with "int" - so it remembers the search string and posts back to Slack with a message menu attachment.

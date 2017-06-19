@@ -10,7 +10,7 @@ Installation
    2. Git clone this repo into your local folder
    3. cd into the quotebot folder
    4. Install the python modules required: pip install -r requirements.txt
-   5. Create a new slack app, named "quotebot" for your slack team (for complete instructions, https://api.slack.com/slack-apps)
+   5. Create a new slack app, named "quotebot" for your slack team (for more info, https://api.slack.com/slack-apps)
       * Go to https://api.slack.com/apps and click on Create New App
       * Enter quotebot for the app name.
       * Take note of the value in Client ID and set the environment variable:  SLACK_CLIENT_ID, e.g. export SLACK_CLIENT_ID=738473984.482347872
@@ -22,30 +22,30 @@ Installation
    9. The server listens on the default port: 4390
    10. In order for the next steps to work - you will need to expose this port - you could use ngrok to do this (see https://ngrok.com)
    11. In the left pane under Features, click on Event Subscriptions and Enable Events
-        a. In the Enable Events Request URL: enter the event listener endpoint of this flask application, e.g. http://44f802c9.ngrok.io
-        b. Add the following Team Events:  message.channels, message.im, pin_added, reaction_added, team_join
-	c. Click Save Changes
+        * In the Enable Events Request URL: enter the event listener endpoint of this flask application, e.g. http://44f802c9.ngrok.io
+        * Add the following Team Events:  message.channels, message.im, pin_added, reaction_added, team_join
+	* Click Save Changes
    12. In the left pane under Features, click on Interactive Messages
-        a. In Request URL, enter the endpoint for the option selection listener: .../actions e.g. http://44f802c9.ngrok.io/actions
-	b. In the Options Load URL, enter the endpoint for the message menu listener: .../options e.g. http://44f802c9.ngrok.io/options
-	c. Click on Enable Interactive Messages
+        * In Request URL, enter the endpoint for the option selection listener: .../actions e.g. http://44f802c9.ngrok.io/actions
+	* In the Options Load URL, enter the endpoint for the message menu listener: .../options e.g. http://44f802c9.ngrok.io/options
+	* Click on Enable Interactive Messages
    13. In the left pane under Settings, click on Install App. This will generate the tokens you'll need to interact with the Slack API
-        a. Click on Permissions
-        b. Add the following Redirect URL endpoint which references the oauth endpoint in this server: .../oauth e.g, http://44f802c9.ngrok.io/oauth
-	c. Take note of the value of OAuth Access Token, and set the environment variable SLACK_BOT_TOKEN with this value .g. export SLACK_BOT_TOKEN=xoxb-193692833939-O5btIpdfjbTNFLocOxh7aThas
+        * Click on Permissions
+        * Add the following Redirect URL endpoint which references the oauth endpoint in this server: .../oauth e.g, http://44f802c9.ngrok.io/oauth
+	* Take note of the value of OAuth Access Token, and set the environment variable SLACK_BOT_TOKEN with this value .g. export SLACK_BOT_TOKEN=xoxb-193692833939-O5btIpdfjbTNFLocOxh7aThas
    14. Set up the bot:
-        a. Stop the server by entering Ctrl-C
-        b. Set the environment variable SLACK_BOT_NAME to "quotebot". e.g. export SLACK_BOT_NAME=quotebot
-        c. run: python print_bot_id.py
-	d. Take note of the value of the Bot ID for 'quotebot'
-	e. Set the environment variable SLACK_BOT_ID to the value noted above.
+        * Stop the server by entering Ctrl-C
+        * Set the environment variable SLACK_BOT_NAME to "quotebot". e.g. export SLACK_BOT_NAME=quotebot
+        * Run: python print_bot_id.py
+	* Take note of the value of the Bot ID for 'quotebot'
+	* Set the environment variable SLACK_BOT_ID to the value noted above.
    15. At this point you should have the following environment variables set correctly (would be good to put them in your login profile):
-        SLACK_CLIENT_ID
-        SLACK_CLIENT_SECRET
-        SLACK_VERIFICATION_TOKEN
-        SLACK_BOT_NAME
-        SLACK_BOT_ID
-        SLACK_BOT_TOKEN
+        * SLACK_CLIENT_ID
+        * SLACK_CLIENT_SECRET
+        * SLACK_VERIFICATION_TOKEN
+        * SLACK_BOT_NAME
+        * SLACK_BOT_ID
+        * SLACK_BOT_TOKEN
    16. Start your server: python app.py
    17. Go to your slack client app and invite @quotebot to your channel.
    18. Type: @quotebot hello

@@ -11,11 +11,11 @@ Installation
    3. cd into the quotebot folder
    4. Install the python modules required: pip install -r requirements.txt
    5. Create a new slack app, named "quotebot" for your slack team (for complete instructions, https://api.slack.com/slack-apps)
-        A. Go to https://api.slack.com/apps and click on Create New App
-        b. Enter quotebot for the app name.
-	c. Take note of the value in Client ID and set the environment variable:  SLACK_CLIENT_ID, e.g. export SLACK_CLIENT_ID=738473984.482347872
-	d. Take note of the value in Client Secret and set the environment variable: SLACK_CLIENT_SECRET, e.g. export SLACK_CLIENT_SECRET=8748fh93jd
-	e. Take note of the value in Verification Token and set the environment variable: SLACK_VERIFICATION_TOKEN, e.g. export SLACK_VERIFICATION_TOKEN=sh3hdbsu77u7
+        *Go to https://api.slack.com/apps and click on Create New App
+        *Enter quotebot for the app name.
+	*Take note of the value in Client ID and set the environment variable:  SLACK_CLIENT_ID, e.g. export SLACK_CLIENT_ID=738473984.482347872
+	*Take note of the value in Client Secret and set the environment variable: SLACK_CLIENT_SECRET, e.g. export SLACK_CLIENT_SECRET=8748fh93jd
+	*Take note of the value in Verification Token and set the environment variable: SLACK_VERIFICATION_TOKEN, e.g. export SLACK_VERIFICATION_TOKEN=sh3hdbsu77u7
    6. In the left pane under Features, click on Incoming Webhooks and click on Enable Incoming Webhooks	
    7. In the left pane under Features, click on Bot Users and then Add Bot User using "quotebot" as the default user name. Click Always Show My Bot as Online.
    8. Start your server: python app.py

@@ -32,7 +32,7 @@ Installation
    13. In the left pane under Settings, click on Install App. This will generate the tokens you'll need to interact with the Slack API
         * Click on Permissions
         * Add the following Redirect URL endpoint which references the oauth endpoint in this server: .../oauth e.g, http://44f802c9.ngrok.io/oauth
-	* Take note of the value of OAuth Access Token, and set the environment variable SLACK_BOT_TOKEN with this value .g. export SLACK_BOT_TOKEN=xoxb-193692833939-O5btIpdfjbTNFLocOxh7aThas
+        * Take note of the value of Bot User OAuth Access Token, and set the environment variable SLACK_BOT_TOKEN with this value .g. export SLACK_BOT_TOKEN=xoxb-193692833939-O5btIpdfjbTNFLocOxh7aThas
    14. Set up the bot:
         * Stop the server by entering Ctrl-C
         * Set the environment variable SLACK_BOT_NAME to "quotebot". e.g. export SLACK_BOT_NAME=quotebot

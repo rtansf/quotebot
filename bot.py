@@ -135,7 +135,7 @@ class Bot():
                 if text.startswith(AT_BOT):
                     command = text.split(AT_BOT)[1].strip().lower()
 
-                if command.startswith('quote') or command.startswith('q '):
+                if command.startswith('quote') or command.startswith('q ') or command.startswith('Q ') or command.startswith('Quote'):
                     toks = command.split(' ')
                     sym_or_name = toks[1].upper()
                     user_command = StockQuote(name="stock_quote", intent="get_stock_quote", params={}, raw=command,

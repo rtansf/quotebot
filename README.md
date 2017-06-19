@@ -12,7 +12,7 @@ Installation
    4. Install the python modules required: pip install -r requirements.txt
    5. Create a new slack app, named "quotebot" for your slack team (for more info, https://api.slack.com/slack-apps)
       * Go to https://api.slack.com/apps and click on Create New App
-      * Enter quotebot for the app name.
+      * For the app name, enter: quotebot
       * Take note of the value in Client ID and set the environment variable:  SLACK_CLIENT_ID, e.g. export SLACK_CLIENT_ID=738473984.482347872
       * Take note of the value in Client Secret and set the environment variable: SLACK_CLIENT_SECRET, e.g. export SLACK_CLIENT_SECRET=8748fh93jd
       * Take note of the value in Verification Token and set the environment variable: SLACK_VERIFICATION_TOKEN, e.g. export SLACK_VERIFICATION_TOKEN=sh3hdbsu77u7
@@ -24,11 +24,11 @@ Installation
    11. In the left pane under Features, click on Event Subscriptions and Enable Events
         * In the Enable Events Request URL: enter the event listener endpoint of this flask application, e.g. http://44f802c9.ngrok.io
         * Add the following Team Events:  message.channels, message.im, pin_added, reaction_added, team_join
-	* Click Save Changes
+        * Click Save Changes
    12. In the left pane under Features, click on Interactive Messages
         * In Request URL, enter the endpoint for the option selection listener: .../actions e.g. http://44f802c9.ngrok.io/actions
-	* In the Options Load URL, enter the endpoint for the message menu listener: .../options e.g. http://44f802c9.ngrok.io/options
-	* Click on Enable Interactive Messages
+        * In the Options Load URL, enter the endpoint for the message menu listener: .../options e.g. http://44f802c9.ngrok.io/options
+        * Click on Enable Interactive Messages
    13. In the left pane under Settings, click on Install App. This will generate the tokens you'll need to interact with the Slack API
         * Click on Permissions
         * Add the following Redirect URL endpoint which references the oauth endpoint in this server: .../oauth e.g, http://44f802c9.ngrok.io/oauth
@@ -37,8 +37,8 @@ Installation
         * Stop the server by entering Ctrl-C
         * Set the environment variable SLACK_BOT_NAME to "quotebot". e.g. export SLACK_BOT_NAME=quotebot
         * Run: python print_bot_id.py
-	* Take note of the value of the Bot ID for 'quotebot'
-	* Set the environment variable SLACK_BOT_ID to the value noted above.
+        * Take note of the value of the Bot ID for 'quotebot'
+        * Set the environment variable SLACK_BOT_ID to the value noted above.
    15. At this point you should have the following environment variables set correctly (would be good to put them in your login profile):
         * SLACK_CLIENT_ID
         * SLACK_CLIENT_SECRET

@@ -27,7 +27,7 @@ Installation
         * Click Save Changes
    12. In the left pane under Features, click on Interactive Messages
         * In Request URL, enter the endpoint for the option selection listener: .../quotebot/actions e.g. http://44f802c9.ngrok.io/quotebot/actions
-        * In the Options Load URL, enter the endpoint for the message menu listener: .../options e.g. http://44f802c9.ngrok.io/quotebot/options
+        * In the Options Load URL, enter the endpoint for the message menu listener: .../quotebot/options e.g. http://44f802c9.ngrok.io/quotebot/options
         * Click on Enable Interactive Messages
    13. In the left pane under Settings, click on Install App. This will generate the tokens you'll need to interact with the Slack API
         * Click on Permissions

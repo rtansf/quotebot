@@ -6,10 +6,10 @@ Quotebot is a Slack Bot providing stock quotes (15 min delay) and fast auto-comp
 Installation
 ------------
 
-   1. Make sure you have python installed on your laptop. (https://www.python.org/downloads/)
+   1. Make sure you have python3 and pip3 installed on your laptop. (https://www.python.org/downloads/)
    2. Git clone this repo into your local folder
    3. cd into the quotebot folder
-   4. Install the python modules required: pip install -r requirements.txt
+   4. Install the python modules required: pip3 install -r requirements.txt
    5. Create a new slack app, named "quotebot" for your slack team (for more info, https://api.slack.com/slack-apps)
       * Go to https://api.slack.com/apps and click on Create New App
       * For the app name, enter: quotebot
@@ -18,7 +18,7 @@ Installation
       * Take note of the value in Verification Token and set the environment variable: SLACK_VERIFICATION_TOKEN, e.g. export SLACK_VERIFICATION_TOKEN=sh3hdbsu77u7
    6. In the left pane under Features, click on Incoming Webhooks and click on Enable Incoming Webhooks	
    7. In the left pane under Features, click on Bot Users and then Add Bot User using "quotebot" as the default user name. Click Always Show My Bot as Online.
-   8. Start your server: python app.py
+   8. Start your server: python3 app.py
    9. The server listens on the default port: 5000
    10. In order for the next steps to work - you will need to expose this port - you could use ngrok to do this (see https://ngrok.com)
    11. In the left pane under Features, click on Event Subscriptions and Enable Events
@@ -35,7 +35,7 @@ Installation
    14. Set up the bot:
         * Stop the server by entering Ctrl-C
         * Set the environment variable SLACK_BOT_NAME to "quotebot". e.g. export SLACK_BOT_NAME=quotebot
-        * Run: python print_bot_id.py
+        * Run: python3 print_bot_id.py
         * Take note of the value of the Bot ID for 'quotebot'
         * Set the environment variable SLACK_BOT_ID to the value noted above.
    15. At this point you should have the following environment variables set correctly (would be good to put them in your login profile):
@@ -45,7 +45,7 @@ Installation
         * SLACK_BOT_NAME
         * SLACK_BOT_ID
         * SLACK_BOT_TOKEN
-   16. Start your server: python app.py
+   16. Start your server: python3 app.py
    17. Go to your slack client app and invite @quotebot to your channel.
    18. Type: @quotebot hello
    19. You should see:  Hello! Do you need a stock quote? For example type: q amzn

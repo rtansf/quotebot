@@ -1,4 +1,4 @@
-![alt text](http://cubify.io/images/quotebot.jpg "Quotebot")
+![alt text](http://cubify.io/images/qb.jpg "Quotebot")
 <h1>QUOTEBOT</h1>
 
 Quotebot is a Slack Bot providing stock quotes (15 min delay) and fast auto-complete company searches from Google Finance.
@@ -67,7 +67,7 @@ The Quotebot server implements 3 essential listeners or REST endpoints:
 
 The following diagram shows the flow of events from the time a user asks for a quote to when the quote is displayed on the user's slack channel.
 
-![alt text](http://cubify.io/images/quotebot-design.jpg "Quotebot Design")
+![alt text](http://cubify.io/images/qb-design.jpg "Quotebot Design")
 
    1. User types: @quotebot q int
    2. The event listener receives "q int", parses and looks up the symbol from its internal trie structures.

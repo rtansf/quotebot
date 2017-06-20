@@ -109,4 +109,4 @@ def ping():
     return 'I\'m alive'
 
 if __name__ == '__main__':
-    app.run(port=4390)
+    app.run(host='0.0.0.0', port=4390)

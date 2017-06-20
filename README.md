@@ -1,4 +1,4 @@
-![alt text](http://pluralconcepts.com/images/quotebot.jpg "Quotebot")
+![alt text](http://cubify.io/images/quotebot.jpg "Quotebot")
 <h1>QUOTEBOT</h1>
 
 Quotebot is a Slack Bot providing stock quotes (15 min delay) and fast auto-complete company searches from Google Finance.
@@ -19,15 +19,15 @@ Installation
    6. In the left pane under Features, click on Incoming Webhooks and click on Enable Incoming Webhooks	
    7. In the left pane under Features, click on Bot Users and then Add Bot User using "quotebot" as the default user name. Click Always Show My Bot as Online.
    8. Start your server: python app.py
-   9. The server listens on the default port: 4390
+   9. The server listens on the default port: 5000
    10. In order for the next steps to work - you will need to expose this port - you could use ngrok to do this (see https://ngrok.com)
    11. In the left pane under Features, click on Event Subscriptions and Enable Events
-        * In the Enable Events Request URL: enter the event listener endpoint of this flask application, e.g. http://44f802c9.ngrok.io
+        * In the Enable Events Request URL: enter the event listener endpoint of this flask application, e.g. http://44f802c9.ngrok.io/quotebot
         * Add the following Team Events:  message.channels, message.im, pin_added, reaction_added, team_join
         * Click Save Changes
    12. In the left pane under Features, click on Interactive Messages
-        * In Request URL, enter the endpoint for the option selection listener: .../actions e.g. http://44f802c9.ngrok.io/actions
-        * In the Options Load URL, enter the endpoint for the message menu listener: .../options e.g. http://44f802c9.ngrok.io/options
+        * In Request URL, enter the endpoint for the option selection listener: .../quotebot/actions e.g. http://44f802c9.ngrok.io/quotebot/actions
+        * In the Options Load URL, enter the endpoint for the message menu listener: .../options e.g. http://44f802c9.ngrok.io/quotebot/options
         * Click on Enable Interactive Messages
    13. In the left pane under Settings, click on Install App. This will generate the tokens you'll need to interact with the Slack API
         * Click on Permissions
@@ -67,7 +67,7 @@ The Quotebot server implements 3 essential listeners or REST endpoints:
 
 The following diagram shows the flow of events from the time a user asks for a quote to when the quote is displayed on the user's slack channel.
 
-![alt text](http://pluralconcepts.com/images/quotebot-design.jpg "Quotebot Design")
+![alt text](http://cubify.io/images/quotebot-design.jpg "Quotebot Design")
 
    1. User types: @quotebot q int
    2. The event listener receives "q int", parses and looks up the symbol from its internal trie structures.

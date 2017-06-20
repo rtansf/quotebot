@@ -35,7 +35,7 @@ def handle_bot_exception(error):
 # Message Event Listener
 # Entry point for all events from slack
 #
-@app.route('/', methods=['POST','GET'])
+@app.route('/quotebot', methods=['POST','GET'])
 def event_listener():
 
     print ('in event_listener')
@@ -61,7 +61,7 @@ def event_listener():
 #
 # OAUTH
 #
-@app.route('/oauth', methods=['POST','GET'])
+@app.route('/quotebot/oauth', methods=['POST','GET'])
 def oauth():
     code = request.args.get('code')
     if code == None:
@@ -74,7 +74,7 @@ def oauth():
 #
 # Message Menu Listener
 #
-@app.route("/options", methods=["POST"])
+@app.route('/quotebot/options', methods=["POST"])
 def menu_options():
     # Parse the request payload
     form_json = json.loads(request.form["payload"])
@@ -89,7 +89,7 @@ def menu_options():
 #
 # Option Selection Listener
 #
-@app.route('/actions', methods=['POST'])
+@app.route('/quotebot/actions', methods=['POST'])
 def actions():
     payload = json.loads(request.form['payload'])
     
@@ -104,9 +104,10 @@ def actions():
 #
 # Ping
 #
-@app.route('/ping')
+@app.route('/quotebot/ping')
 def ping():
     return 'I\'m alive'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4390)
+    app.run(host='0.0.0.0')
+

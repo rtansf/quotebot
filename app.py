@@ -42,7 +42,13 @@ def event_listener():
     print (request.data)
     print ('-----------------')
 
+    request.data = str(request.data, 'utf-8')
+    
     slack_event = json.loads(request.data)
+    print ('slack_event = ')
+    print (slack_event)
+    print ('------------------')
+    
     token = slack_event['token']
 
     if token != config.verification_token:
@@ -104,7 +110,7 @@ def actions():
 #
 # Ping
 #
-@app.route('/quotebot/ping')
+@app.route('/quotebot/ping', methods=['POST','GET'])
 def ping():
     return 'I\'m alive'
 

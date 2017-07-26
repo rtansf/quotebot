@@ -26,4 +26,11 @@ class StockQuote(Command):
             #print (r.text)
             payload = r.text[3:]
             j = json.loads(payload)
-            return cname + ' (' + symbol + ') : ' + j[0]['l']
+            delta_string = j[0]['c']
+            delta = float(delta_string)
+            direction = ''
+            if delta < 0:
+                direction = ':arrow_down:'
+            elif delta > 0:
+                direction = ':arrow_up:'
+            return cname + ' (' + symbol + ') : ' + j[0]['l'] + '  ' + direction + ' ' + delta_string

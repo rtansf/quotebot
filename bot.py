@@ -135,9 +135,18 @@ class Bot():
                 if text.startswith(AT_BOT):
                     command = text.split(AT_BOT)[1].strip().lower()
 
-                if command.startswith('quote') or command.startswith('q ') or command.startswith('Q ') or command.startswith('Quote'):
+#                if command.startswith('quote') or command.startswith('q ') or command.startswith('Q ') or command.startswith('Quote'):
+                sym_or_name = ''
+                if command.lower().startswith('help') == False:
                     toks = command.split(' ')
-                    sym_or_name = toks[1].upper()
+                    if len(toks) <= 1:
+                        sym_or_name = command.strip().upper()
+                    else:
+                        tok1 = toks[0]
+                        tok2 = toks[1]
+                        if tok1.lower().startswith('q'):
+                            sym_or_name = tok2.upper()
+                        
                     user_command = StockQuote(name="stock_quote", intent="get_stock_quote", params={}, raw=command,
                                              urls={})
                     user_command.set_param('company-trie', Bot.company_trie)

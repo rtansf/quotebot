@@ -3,6 +3,8 @@
 
 Quotebot is a Slack Bot providing stock quotes (15 min delay) and fast auto-complete company searches from Google Finance.
 
+Watch screencast here: https://cl.ly/0r2e2P3K003T 
+
 Installation
 ------------
 

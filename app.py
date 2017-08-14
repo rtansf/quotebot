@@ -16,24 +16,16 @@ from bot_exception import BotException
 from slackclient import SlackClient
 from config import Config
 from bot import Bot
-from threading import Thread
+from async_task import AsyncTask
 import requests
 import json
-import asyncio
 
 config = Config()
 slack_client = SlackClient(config.bot_token)
 bot = Bot()
 
 app = Flask(__name__)
-
-def start_loop(loop):
-    asyncio.set_event_loop(loop)
-    loop.run_forever()
-
-new_loop = asyncio.new_event_loop()
-t = Thread(target=start_loop, args=(new_loop,))
-t.start()
+async_task = AsyncTask()
 
 @app.errorhandler(BotException)
 def handle_bot_exception(error):
@@ -69,8 +61,9 @@ def event_listener():
         return jsonify ({"challenge" : challenge})
 
     if 'event' in slack_event:
-        new_loop.call_soon_threadsafe(bot.handle_event, slack_event)
-
+        # Create async task to handle the event and return immediately - so that slack does not timeout.
+        async_task.create_task(bot.handle_event, slack_event)
+        
     return make_response('', 200)
 
 #

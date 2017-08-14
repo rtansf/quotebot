@@ -9,7 +9,7 @@ class AsyncTask():
       t.start()
 
    def create_task(self, func, *args):
-      self.new_loop.call_soon_threadsafe(func, args)
+      self.new_loop.call_soon_threadsafe(func, *args)
 
    def start_loop(self, loop):
       asyncio.set_event_loop(loop)
